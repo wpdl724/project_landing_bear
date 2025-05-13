@@ -4,18 +4,68 @@
     #wrap .intro{
         height: 100vh; /* 풀스크린  */
         background: url(../images/bg1.png) no-repeat center / cover; /* 화면 크기를 줄여도 곰 머리가 가운데에 배치하고 있다 */
+        position: relative; /* after 선택자의 기준이 되게 position:relative를 작성하는 것이다 */
     }
-    #wrap .intro .container{}
-    #wrap .intro .container h1:nth-child(1){}
-    #wrap .intro .container h1:nth-child(1) a {}
-    #wrap .intro .container h1:nth-child(1) a img{
+    /* 북극곰 이미지 - 그라디언트 효과 */
+    #wrap .intro::after{
+        content: ''; display: block; /*가상요소(after)의 필수 속성 */
+        background: linear-gradient(transparent, rgb(0,0,0,0.5));
+        /* background: yellow; 임시 색상 */
+        width: 100%; height: 100%; /* 부모크기와 같게 만들기 */
+        position: absolute; left: 0; top: 0; z-index:100;
+    } 
+    #wrap .intro .container{
+        position:relative; z-index:200;
+        border: 1px solid red; /* 내용을 가지고있는 묶음 부분이다 */
+        max-width: 1250px; /* max로 처리하면서 가변형이 된다 */
+        min-width: 320px;
+        margin: 0 auto; /* 디바이스 크기보다 width가 작은 블록 요소를 가운데 배치하는 방법 */
+        /* 형제-형제는 margin , 부모와 자식은 padding */
+        padding-top:100px;
+        /* 자식, 자손이 인라인일 경우 수평정렬 text-align */
+        text-align: center; 
+        /* 자식의 flaot 적용으로 인해 부모 바깥으로 나가는 문제해결 */
+        overflow: hidden;
+    }
+    #wrap .intro .container h1:nth-child(1){
+        text-align: left; /* 팬더로고만 왼쪽으로 갔다*/
+        margin: 0 0 100px;
+    }
+    #wrap .intro .container h1:nth-child(1) a {/* 인라인 */
+    }
+    #wrap .intro .container h1:nth-child(1) a img{/* 인라인 */
         width: 89px;
-
     }
-    #wrap .intro .container h1:nth-child(2){}
-    #wrap .intro .container h1:nth-child(2) em{}
-    #wrap .intro .container .sponsor_btn{}
-    #wrap .intro .container .sponsor_question{}
+    #wrap .intro .container h1:nth-child(2){
+        color: #fff;
+        font-size: 4.375rem;
+        line-height: 1.3; /* 행간 130% -> 1.3으로 작성 */
+    }
+    #wrap .intro .container h1:nth-child(2) em{
+        color: #fff;
+        font-weight:700;
+    }
+    #wrap .intro .container .sponsor_btn{
+        display: block;
+        width: 409px; margin: 100px auto; /* margin 상하 100 좌우 auto 설정 */
+        line-height: 71px; /* 수직 중앙에 배치해야 할 경우 -> height를 line-height를 사용하면 된다. 단 글자가 1줄 일 경우 사용가능 */
+        background: linear-gradient(90deg, #FE9300, #FF7300);
+        border-radius: 50px;
+        font-size: 2.125rem;
+        font-weight: 700;
+        color: #fff;
+    }
+    #wrap .intro .container .sponsor_question{
+        float: right; /* 오른쪽으로 갔다 */
+        color: #fff;
+        background-color: #000;
+        border-radius:30px;
+        width: 439px; 
+        height: 51px;
+        line-height:1.2; /* 행간 120%로 피그마에서는 설정 되어있어서 썼으면! 높이값을 따로 줘야함 */
+        padding-top: 10px; /* 위에 여백 띄우기 */
+        font-size: 1.625rem;
+    }
 /* 2행 =======================퀴즈 */
 /* 3행 =======================새끼북극곰 이야기 */
 /* 4행 =======================빙하 면적감소 */
