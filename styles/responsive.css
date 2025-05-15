@@ -7,9 +7,28 @@
     #wrap .intro .container h1:nth-child(2){font-size: 3.125rem;}
     #wrap .intro .container .sponsor_btn{width:270px; line-height: 62px; font-size: 1.375rem;}
     #wrap .intro .container .sponsor_question{width:333px; line-height: 1.7; font-size: 1.25rem;}
+    /* 2행 =======================퀴즈 */
+    #wrap .quiz {padding: 150px 80px;}
+    /* 3행 =======================영상 */
+    #wrap .ad{padding:  200px 80px;}
 }
+
 /* Mobile 849~320 */
 @media screen and (max-width:849px) {
     #wrap .intro .container h1:nth-child(2){font-size: 1.875rem;}
     #wrap .intro {padding: 0 15px;}
+    /* 2행 =======================퀴즈 */
+    #wrap .quiz {padding: 70px 15px;}
+    #wrap .quiz .container #left_quiz {margin-bottom: 50px;}
+    /* 2행 퀴즈 밑으로 내려오게 설정하기 */
+    #wrap .quiz .container{grid-template-columns: 1fr;}
+    #wrap .quiz .container .right p:nth-child(1) img{width: 50%;}
+    /* 3행  ====================비디오*/
+    #wrap .ad {padding: 50px 15px;}
+    #wrap .container .sponsor_btn {
+        width: 270px; height: 62px;
+        font-size:1.375rem;
+    }
+    #wrap .ad .container h2{font-size: 1.375rem;}
+    #wrap .ad .container iframe {height: 400px;} /* 미디어커리 849px이하일때 400px로 보이겠다는 것 */
 }

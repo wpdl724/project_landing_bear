@@ -1,4 +1,6 @@
 /* index.css */
+/* 반응형 CSS 속성 변경 시 애니메이션 적용 속성 */
+body * {transition: all 0.5s;}
 /* 1행 =======================북극곰 후원 안내 */
     #wrap {} /* 기본값 유지를 위해 작성하지 않음 . 기본값 -> 너비는 부모의 100%, 높이는 내용만큼 */
     #wrap .intro{
@@ -72,7 +74,9 @@
     padding:150px 0; /* 상하150 좌우0  */
 }
 #wrap .quiz .container {
-    width: 1250px; margin: 0 auto;
+    max-width: 1250px; 
+    min-width: 320px;
+    margin: 0 auto;
     border: 3px solid aqua;
     display: grid; /* grid를 사용하게되면 왼쪽퀴즈와 오른쪽 참여현황 정렬하게 되는 것 (grid는 밑으로 가는 성향) */
     grid-template-columns: 1fr 1fr; /* 반 / 반  옆으로 가게 된다 */
@@ -117,17 +121,44 @@
     border-radius: 50px;
     margin-top: 38px;
 }
-#wrap .quiz .container .right {text-align: right;}
+#wrap .quiz .container .right {text-align: right}
 #wrap .quiz .container .right p{}
 #wrap .quiz .container .right p:nth-child(1){}
-#wrap .quiz .container .right p:nth-child(1) img{}
+#wrap .quiz .container .right p:nth-child(1) img{width: 100%;}
 #wrap .quiz .container .right p:nth-child(2){color: #fff;}
 
-
-
-
-
 /* 3행 =======================새끼북극곰 이야기 */
+#wrap .ad {
+    background: url(../images/video_bg.png) right / cover; /* center, cover 순서가 바뀌면 안된다 <right로 설정하면 북극곰 얼굴이 웹반응형 나타날때마다 이미지가 따라오는 것을 볼수 있다> */
+    width: 100%;
+    padding: 200px 0;
+    /* backgroud-imge:url , position:center, size:cover* 을 background에 공통으로 설정하기*/ 
+
+}
+#wrap .ad .container {
+    max-width:1250px; min-width: 320px;
+    margin: 0 auto; text-align: center;
+    border: 1px solid red;
+}
+#wrap .ad .container h2{
+    font-size: 3.438rem; font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 70px;
+}
+#wrap .ad .container iframe{
+    max-width: 900px; height: 600px;
+    width: 100%;  /* 900이하로 떨어질때 유투브 영상이 가변형으로 바뀌는 것을 볼 수있다 */
+}
+#wrap .container .sponsor_btn{
+    color: #fff;
+    display: block;
+    width: 409px; margin:100px auto 0; 
+    line-height: 71px;
+    background: linear-gradient(90deg, #FE9300, #FF7300);
+    border-radius: 50px;
+    font-size: 2.125rem; font-weight: 700;
+}
+
 /* 4행 =======================빙하 면적감소 */
 /* 5행 =======================인류 재앙*/
 /* 6행 =======================지구 위기 */
