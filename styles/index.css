@@ -158,11 +158,89 @@ body * {transition: all 0.5s;}
     border-radius: 50px;
     font-size: 2.125rem; font-weight: 700;
 }
-
 /* 4행 =======================빙하 면적감소 */
 /* 5행 =======================인류 재앙*/
+#wrap .disaster {
+    background-color: #F5F5F5;
+    padding: 200px 0; /* 피그마와 CSS 를 적절히 조합해서 여백 설정하기  */
+    text-align: center;
+}
+#wrap .disaster .container {
+    border: 1px solid red;
+    max-width: 1250px; min-width:320px; /* 반응형 너비설정->width를 max-width로 변경 */
+    /* 최소 320~ 최대 1250 사이 너비값은 가변형 세팅 */
+    /* (위) 큰 범위값 세팅후 @media 규칙내에서 태블릿, 모바일에 맞는 레이아웃 재수정하며 반응형 제작 */
+    margin: 0 auto;
+}
+#wrap .disaster .container h2 {
+    font-size: 3.438rem;
+    font-weight: 500;
+    
+}
+#wrap .disaster .container > p {
+    font-size: 1.25rem;
+    margin: 55px 0;
+    line-height: 1.7;
+}
+#wrap .disaster .container .list {
+    display: flex; flex-flow: row nowrap;
+    /* 옆으로 정렬하는 대상(li)의 부모(flex)*/
+    /* flex의 자식요소들을 옆으로 정렬(기본값) flex-flow:row nowrap; */
+    gap: 20px; /* gap설정으로 일정크기로 사이 여백을 쉽게 줄수 있다 */
+}
+#wrap .disaster .container .list li {
+    background: #fff;
+    flex: 1; /* 옆으로 1:1:1 비율로 설정하는 법  */
+}
+#wrap .disaster .container .list li .bg {
+    height: 320px; /* 크기 고정을 시키는 것이다 높이크기 설정!(bg사이즈가 커짐) */
+    background-size:cover;
+    background-position: 0 55%; /* x축 ,y축 로 설정하기  */
+    position: relative;
+}
+#wrap .disaster .container .list li .bg::before {/* 그라디언트 설정 */
+    content: ''; display: block;
+    position:absolute; left: 0; top: 0; width: 100%; height: 100%;
+    /* (위) content~ height 속성까지 before 또는 after 가상요소 사용시 필수 속성 모음 */
+    background: linear-gradient(#000 10%, transparent 60%);
+    /* background:linear-gradient (첫번째색상 위치% , 두번째색상 위치%); */
+}
+#wrap .disaster .container .list li .bg h3 {
+    color: #fff; /* 글씨가 안보이는 경우 -> 배경보다 밑에 있어서 안보이는것이다 */
+    position: relative; z-index: 60; /* 하얀색 글씨가 나타남 */
+    font-size: 2.688rem; font-weight: 700;
+    padding-top:48px;
+    margin: 11px;
+}
+#wrap .disaster .container .list li .bg p {
+    color: #fff;
+    position: relative; z-index: 60; /* z-인덱스 쓰기위해서 position이 있어야한다 현재위치에서 설정->relative (z-index속성은 position속성이 선행되어야만 사용할 수있는 '중첩순서'이다*/
+    font-size: 1.25rem;
+}
+#wrap .disaster .container .list li > p {
+    height: 250px; /* 하얀색 배경이 밑에 까지 길어진걸 볼수 있음  */
+    font-size: 1.25rem;
+    line-height: 1.7;
+    padding: 20px 20px;
+}
+/* 5행 개별 배경 선택자 */
+
+#wrap .disaster .container .list li:nth-child(1) .bg {
+    background-image: url(../images/28.png);
+    
+    
+}
+#wrap .disaster .container .list li:nth-child(2) .bg {
+    background-image: url(../images/27.png);
+    
+}
+#wrap .disaster .container .list li:nth-child(3) .bg {
+    background-image: url(../images/wwf.jpg);
+    
+}
+
 /* 6행 =======================지구 위기 */
 /* 7행 =======================WWF 단체홍보 */
 /* 8행 =======================다양한 활동 */
 /* 9행 =======================감사선물 */
-/* 10행 =======================결제 안내사항 /
+/* 10행 =======================결제 안내사항 /A

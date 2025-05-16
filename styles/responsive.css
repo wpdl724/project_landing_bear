@@ -11,9 +11,13 @@
     #wrap .quiz {padding: 150px 80px;}
     /* 3행 =======================영상 */
     #wrap .ad{padding:  200px 80px;}
+    /* 5행 =============================인류재앙 */
+    #wrap .disaster {padding: 200px 80px;}
+    #wrap .disaster .container > p {}
+    #wrap .disaster .container .list li .bg p {font-size: 1rem;}
+    #wrap .disaster .container .list li > p {font-size: 1rem;}
 }
-
-/* Mobile 849~320 */
+    /* Mobile 849~320 */
 @media screen and (max-width:849px) {
     #wrap .intro .container h1:nth-child(2){font-size: 1.875rem;}
     #wrap .intro {padding: 0 15px;}
@@ -27,8 +31,18 @@
     #wrap .ad {padding: 50px 15px;}
     #wrap .container .sponsor_btn {
         width: 270px; height: 62px;
-        font-size:1.375rem;
-    }
+        font-size:1.375rem;}
     #wrap .ad .container h2{font-size: 1.375rem;}
     #wrap .ad .container iframe {height: 400px;} /* 미디어커리 849px이하일때 400px로 보이겠다는 것 */
+
+    /* 5행 =============================인류재앙 */
+    #wrap .disaster {padding: 70px 15px;}
+    #wrap .disaster .container .list li .bg {height: 150px; /* desktop에서 320px 설정했던것을 미디어쿼리에서는 150px로 변경해준다-> why? 모바일에서 사이즈가 달라졌으니깐 */}
+    #wrap .disaster .container .list {flex-flow: column nowrap; /* 방향(column)과 줄바꿈(nowrap)을 동시에 할수 있어서 이 설정을 써야한다 */} 
+    #wrap .disaster .container .list li > p {height: max-content;}
+    #wrap .disaster .container .list li > p {font-size: 0.813rem;}
+    #wrap .disaster .container h2 {font-size: 2.5rem;}
+    #wrap .disaster .container > p {font-size: 1rem; margin: 40px 0;}
+    #wrap .disaster .container .list li .bg h3 {font-size: 1.375rem;}
+    #wrap .disaster .container .list li .bg p {font-size: 1rem;}
 }
