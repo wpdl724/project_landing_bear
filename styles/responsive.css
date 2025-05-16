@@ -26,7 +26,8 @@
     #wrap .quiz .container #left_quiz {margin-bottom: 50px;}
     /* 2행 퀴즈 밑으로 내려오게 설정하기 */
     #wrap .quiz .container{grid-template-columns: 1fr;}
-    #wrap .quiz .container .right p:nth-child(1) img{width: 50%;}
+    #wrap .quiz .container .right p:nth-child(1) img{width: 100%;}
+    #wrap .quiz .container .right p {text-align: center;}
     /* 3행  ====================비디오*/
     #wrap .ad {padding: 50px 15px;}
     #wrap .container .sponsor_btn {
