@@ -159,6 +159,25 @@ body * {transition: all 0.5s;}
     font-size: 2.125rem; font-weight: 700;
 }
 /* 4행 =======================빙하 면적감소 */
+#wrap .glacier {
+    background-image: url(../images/50_bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 200px 0;
+}
+#wrap .glacier .container {
+    max-width: 1250px;
+    min-width: 320px;
+    margin:0 auto;
+}
+#wrap .glacier .container h2 {
+    font-size: 3.438rem;
+    font-
+}
+#wrap .glacier .container h2 span{
+    font-weight: 600;
+    color:#050505;
+}
 /* 5행 =======================인류 재앙*/
 #wrap .disaster {
     background-color: #F5F5F5;
@@ -236,7 +255,7 @@ body * {transition: all 0.5s;}
 }
 #wrap .disaster .container .list li:nth-child(3) .bg {
     background-image: url(../images/wwf.jpg);
-    
+
 }
 
 /* 6행 =======================지구 위기 */
